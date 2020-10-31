@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+<script
+      src="https://kit.fontawesome.com/b7a54dff81.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <title>Sarah's Weather App</title>
+  </head>
+  <body>
+    <div class="container">
+      <div id="app">
+        <div class="weather-app">
+          <p><span class="today">Sun, September 27, 2020</span><br/>
+          <span class="time">
+            <i class="far fa-clock"></i> Last Updated at 5:00pm</span>
+          </p>
+          <form id="city-form">
+             <div class="row">
+                <div class="col-9">
+                <input
+                type="text"
+                class="form-control"
+                placeholder="Enter city here..."
+                id="search-text-input"
+                autocomplete="off"
+                autofocus="on"
+              />
+              <br />
+                <button id="search-button" type="submit" class="btn btn-primary">Search</button>
+              </form>
+            </div>
+            </div>
+          <h2 class="currently"><em>Currently in</em></h2>
+          <h1 class="searchedCity" id="searchedCity">Duryea</h1>
+        <hr />
+          <br />
+          <div class="row">
+            <div class="col-4" id="current-sky">
+                <span class="mostly" id="mostly">Sunny</span>
+                </div>
+        <div class="col-4">
+              <img
+                src="images/mostlysunny.png"
+                alt="mostlysunny"
+                width="275px"
+                class="duryeasun"
+                id="duryea-sun"
+              />
+            </div>
+            <div class="col-4">
+              <ul class=main-list id="current-list">
+                <li>
+                  <span class="temperature" id="temperature"> <strong>63</strong></span><span class="units">
+                      <a href="#" id="fahrenheit-link"> °F </a> | <a href="#" id="celsius-link"> °C </a></span>
+                <li class="feel" id="feel">Feels like: 44°F</li>
+                <li class = "low" id="low">Tonight's Low: 36 °F</li>
+                <li class = "humidity" id="humidity">Humidity: 34%</li>
+                <li class="wind" id="wind">Wind: 10mph</li>
+              </ul>
+            </div>
+        </div>
+            <hr />
+            <div class="row">
+              <div class="col-4" id="sunrise">
+                <img src="images/sunrise.png" alt="sunrise" width="100px" />
+              </div>
+              <div class="col-4" id="sunset">
+                <img src="images/sunset.png" alt="sunset" width="100px" />
+              </div>
+              <div class="col-4" id="thermometer">
+                <i class="fas fa-thermometer-quarter"></i>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4" id="riseTime">Sunrise: 6:48am</div>
+              <div class="col-4" id="setTime">Sunset: 7:02pm</div>
+              <div class="col-4" id="barPressure">Pressure: Low</div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-2">Mon</div>
+              <div class="col-2">Tues</div>
+              <div class="col-2">Wed</div>
+              <div class="col-2">Thurs</div>
+              <div class="col-2">Fri</div>
+            </div>
+            <div class="row">
+              <div class="col-2"><i class="fas fa-cloud-rain"></i></div>
+              <div class="col-2"><i class="fas fa-cloud-sun"></i></div>
+              <div class="col-2"><i class="fas fa-sun"></i></div>
+              <div class="col-2"><i class="fas fa-bolt"></i></div>
+              <div class="col-2"><i class="fas fa-sun"></i></div>
+            </div>
+            <div class="row">
+              <div class="col-2">66° / 37°</div>
+              <div class="col-2">70° / 48°</div>
+              <div class="col-2">77° / 50°</div>
+              <div class="col-2">77° / 55°</div>
+              <div class="col-2">77° / 55°</div>
+            </div>
+          </div>
+          <footer>
+            <p>Open source code by Sarah Bulford</p>
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
