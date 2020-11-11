@@ -23,15 +23,14 @@
   </head>
   <body>
     <div class="container">
-      <div id="app">
         <div class="weather-app">
           <p><span class="today">Sun, September 27, 2020</span><br/>
           <span class="time">
             <i class="far fa-clock"></i> Last Updated at 5:00pm</span>
           </p>
-          <form id="city-form">
+         <form id="city-form">
              <div class="row">
-                <div class="col-9">
+               <div class="col-6">
                 <input
                 type="text"
                 class="form-control"
@@ -40,18 +39,20 @@
                 autocomplete="off"
                 autofocus="on"
               />
-              <br />
-                <button id="search-button" type="submit" class="btn btn-primary">Search</button>
               </form>
             </div>
-            </div>
-          <h2 class="currently"><em>Currently In</em></h2>
+<div class="col-3"><button id="search-button" type="submit" class="btn btn-primary w-100">Search</button></div>
+<div class="col-3"><button id="search-button" type="submit" class="btn btn-secondary w-100">Current</button></div>
+</div>
+          <h2 class="currently"><em>Your current weather in</em></h2>
           <h1 class="searchedCity" id="searchedCity">Duryea</h1>
         <hr />
           <br />
           <div class="row">
             <div class="col-4" id="current-sky">
                 <span class="mostly" id="mostly">Sunny</span>
+                <span class="temperature" id="temperature"> <strong>63</strong></span><span class="units">
+                  <a href="#" id="fahrenheit-link"> °F </a> | <a href="#" id="celsius-link"> °C </a></span>
                 </div>
         <div class="col-4">
               <img
@@ -64,9 +65,6 @@
             </div>
             <div class="col-4">
               <ul class=main-list id="current-list">
-                <li>
-                  <span class="temperature" id="temperature"> <strong>63</strong></span><span class="units">
-                      <a href="#" id="fahrenheit-link"> °F </a> | <a href="#" id="celsius-link"> °C </a></span>
                 <li class="feel" id="feel">Feels like: 44°F</li>
                 <li class = "low" id="low">Tonight's Low: 36 °F</li>
                 <li class = "humidity" id="humidity">Humidity: 34%</li>
@@ -83,7 +81,7 @@
                 <img src="images/sunset.png" alt="sunset" width="100px" />
               </div>
               <div class="col-4" id="thermometer">
-                <i class="fas fa-thermometer-quarter"></i>
+                <i class="fas fa-thermometer-quarter" width="100px"></i>
               </div>
             </div>
             <div class="row">
@@ -107,17 +105,16 @@
               <div class="col-2"><i class="fas fa-sun"></i></div>
             </div>
             <div class="row">
-              <div class="col-2">66° / 37°</div>
-              <div class="col-2">70° / 48°</div>
-              <div class="col-2">77° / 50°</div>
-              <div class="col-2">77° / 55°</div>
-              <div class="col-2">77° / 55°</div>
+              <div class="col-2">66°/37°</div>
+              <div class="col-2">70°/48°</div>
+              <div class="col-2">77°/50°</div>
+              <div class="col-2">77°/55°</div>
+              <div class="col-2">77°/55°</div>
             </div>
           </div>
           <footer>
             <p><a href="https://github.com/Sbulford35/My-WeatherApp">Open source code</a> by Sarah Bulford <br />
             Hosting with  <a href="https://www.netlify.com">Netlify</a></p>
-            
           </footer>
         </div>
       </div>

@@ -1,6 +1,7 @@
 function currentTime() {
   let now = new Date();
   let today = document.querySelector("p .today");
+ 
   let days = [
     "Sunday",
     "Monday",

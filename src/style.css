@@ -12,12 +12,17 @@ li {
   color: rgb(92, 88, 88);
 }
 
-h1 {
+section.fourth-row {
+  text-align: center;
+}
+
+h1.searchedCity {
   color: #0278ae;
   font-size: 40pt;
   font-weight: bold;
-  line-height: 25pt;
+  line-height: 30pt;
   padding: 0px 0px 18px 0px;
+  text-align: center;
 }
 
 h2.currently {
@@ -26,6 +31,7 @@ h2.currently {
   font-weight: bold;
   line-height: 30pt;
   padding-top: 10px;
+  text-align: center;
 }
 
 i.fa-clock {
@@ -73,8 +79,17 @@ i.fa-thermometer-quarter {
   padding: 30px;
 }
 
+ul.main-list {
+  text-align: left;
+}
+
+img.duryeasun {
+  width: 200px;
+  margin-left: -35px;
+}
+
 .today {
-  font-size: 25pt;
+  font-size: 20pt;
   color: #0278ae;
   font-weight: bold;
 }
@@ -85,16 +100,6 @@ i.fa-thermometer-quarter {
   line-height: -20pt;
 }
 
-.col-2 {
-  text-align: center;
-}
-
-.duryeasun {
-  position: relative;
-  margin-top: -15px;
-  margin-left: -15px;
-}
-
 .weather-app {
   background-color: #d9ecf2;
   border: 1px solid #0278ae;
@@ -102,7 +107,7 @@ i.fa-thermometer-quarter {
   color: #2d2e30;
   font-family: "Montserrat", sans-serif;
   margin: 25px auto;
-  max-width: 800px;
+  max-width: 600px;
   padding: 25px;
 }
 
@@ -115,10 +120,8 @@ i.fa-thermometer-quarter {
 .col-2 {
   color: #0278ae;
   font-weight: bold;
-  display: block;
-  width: 700px;
-  position: relative;
-  margin: 5px 12px 5px 12px;
+  text-align: center;
+  margin: 0px 9.5px 0px 9.5px;
 }
 
 .sun {
@@ -127,27 +130,23 @@ i.fa-thermometer-quarter {
 }
 .temperature {
   color: #0278ae;
-  font-size: 60pt;
+  font-size: 30pt;
   font-weight: bold;
   line-height: 50pt;
 }
 
 .mostly {
-  text-align: center;
+  text-align: left;
   color: #0278ae;
-  font-size: 35pt;
+  font-size: 30pt;
   font-weight: bold;
-  line-height: 40pt;
+  line-height: 30pt;
   position: relative;
   margin-left: 0px;
 }
 
 .units {
   position: relative;
-  top: -42px;
+  top: -15px;
   font-weight: normal;
-}
-
-.maindegree {
-  text-align: left;
 }
