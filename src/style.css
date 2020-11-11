@@ -80,12 +80,15 @@ i.fa-thermometer-quarter {
 }
 
 ul.main-list {
-  text-align: left;
+  text-align: right;
+  margin-right: 10px;
+  margin-left: -30px;
 }
 
 img.duryeasun {
-  width: 200px;
-  margin-left: -35px;
+  width: 175px;
+  margin-left: -10px;
+  margin-top: -20px;
 }
 
 .today {
@@ -109,6 +112,7 @@ img.duryeasun {
   margin: 25px auto;
   max-width: 600px;
   padding: 25px;
+  margin-bottom: 10px;
 }
 
 .col-4 {
@@ -133,16 +137,17 @@ img.duryeasun {
   font-size: 30pt;
   font-weight: bold;
   line-height: 50pt;
+  position: relative;
+  margin-left: -25px;
 }
 
 .mostly {
-  text-align: left;
   color: #0278ae;
   font-size: 30pt;
   font-weight: bold;
   line-height: 30pt;
   position: relative;
-  margin-left: 0px;
+  margin-left: -15px;
 }
 
 .units {
