@@ -58,7 +58,7 @@ form.addEventListener("submit", enterCity);
 function showCurrentWeather(response) {
   console.log(response.data);
 
-  let search = response.data.name.toUpperCase();
+  let search = response.data.name.capitalizeFirstLetter();
   let searched = `${search}`;
   let searchedCity = document.querySelector("#searchedCity");
   searchedCity.innerHTML = searched;
@@ -108,10 +108,9 @@ function showCurrentWeather(response) {
   let barPressure = document.querySelector("#barPressure");
   barPressure.innerHTML = currentPressure;
 
-  let iconElement = response.weather.icon;
-  let currentIcon = `Icon: ${iconElement}`;
-  let presentIcon = doument.querySelector("#icon");
-  iconElement.innerHTML = iconElement;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function citySearch(city) {
@@ -120,3 +119,12 @@ function citySearch(city) {
   let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(weatherUrl).then(showCurrentWeather);
 }
+
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (63 * 9) / 5 + 32;
+  alert(fahrenheitTemperature);
+}
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
