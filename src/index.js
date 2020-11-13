@@ -107,6 +107,11 @@ function showCurrentWeather(response) {
   let currentPressure = `Pressure: ${barometricPressure}`;
   let barPressure = document.querySelector("#barPressure");
   barPressure.innerHTML = currentPressure;
+
+  let iconElement = response.weather.icon;
+  let currentIcon = `Icon: ${iconElement}`;
+  let presentIcon = doument.querySelector("#icon");
+  iconElement.innerHTML = iconElement;
 }
 
 function citySearch(city) {
