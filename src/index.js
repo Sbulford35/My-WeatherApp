@@ -112,11 +112,18 @@ function showCurrentWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
+function displayForcast(response) {
+  console.log(response.data);
+}
+
 function citySearch(city) {
   let apiKey = "738213e2d75e5700ee8029528ef19c1a";
   let units = "imperial";
-  let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  let weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   axios.get(weatherUrl).then(showCurrentWeather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForcast);
 }
 
 function showFahrenheitTemperature(event) {
