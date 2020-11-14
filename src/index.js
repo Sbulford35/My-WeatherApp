@@ -122,9 +122,18 @@ function citySearch(city) {
 
 function showFahrenheitTemperature(event) {
   event.preventDefault();
-  let fahrenheitTemperature = (63 * 9) / 5 + 32;
+  let fahrenheitTemperature = Math.round((63 * 9) / 5 + 32);
   alert(fahrenheitTemperature);
 }
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  let celsiusTemperature = Math.round((63 - 32) * 5 / 9);
+  alert(celsiusTemperature);
+}
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
