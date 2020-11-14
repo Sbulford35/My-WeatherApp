@@ -155,3 +155,12 @@ img.icon {
   top: -15px;
   font-weight: normal;
 }
+
+.current-sky .active {
+  color: rgb(92, 88, 88);
+  cursor: default;
+}
+
+.current-sky .active:hover {
+  text-decoration: none;
+}

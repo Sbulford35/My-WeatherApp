@@ -52,13 +52,10 @@ function enterCity(event) {
   citySearch(cityInput.value);
 }
 
-let form = document.querySelector("#city-form");
-form.addEventListener("submit", enterCity);
-
 function showCurrentWeather(response) {
   console.log(response.data);
 
-  let search = response.data.name.capitalizeFirstLetter();
+  let search = response.data.name;
   let searched = `${search}`;
   let searchedCity = document.querySelector("#searchedCity");
   searchedCity.innerHTML = searched;
@@ -68,10 +65,12 @@ function showCurrentWeather(response) {
   let mostly = document.querySelector("#mostly");
   mostly.innerHTML = sky;
 
-  let nowTemperature = Math.round(response.data.main.temp);
+  let nowTemperature = Math.round(fahrenheitTemperature);
   let fahrenheit = `${nowTemperature}`;
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = fahrenheit;
+
+  fahrenheitTemperature = response.data.main.temp;
 
   let minTemp = Math.round(response.data.main.temp_min);
   let minimum = `Feels like: ${minTemp}°F`;
@@ -122,18 +121,30 @@ function citySearch(city) {
 
 function showFahrenheitTemperature(event) {
   event.preventDefault();
-  let fahrenheitTemperature = Math.round((63 * 9) / 5 + 32);
-  alert(fahrenheitTemperature);
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let nowTemperature = document.querySelector("#temperature");
+  nowTemperature.innerHTML = Math.round(fahrenheitTemperature);
 }
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let nowTemperature = document.querySelector("#temperature");
+  let celsiusTemperature = ((fahrenheitTemperature - 32) * 5 / 9);
+  nowTemperature.innerHTML = Math.round(celsiusTemperature);
+}
+
+let fahrenheitTemperature = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 
-function showCelsiusTemperature(event) {
-  event.preventDefault();
-  let celsiusTemperature = Math.round((63 - 32) * 5 / 9);
-  alert(celsiusTemperature);
-}
-
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
+
+let form = document.querySelector("#city-form");
+form.addEventListener("submit", enterCity);
+
+citySearch("Binghamton")
