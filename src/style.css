@@ -83,6 +83,7 @@ ul.main-list {
   text-align: right;
   margin-right: 10px;
   margin-left: -30px;
+  text-transform: capitalize;
 }
 
 img.icon {
@@ -152,6 +153,7 @@ img.icon {
   line-height: 30pt;
   position: relative;
   margin-left: -15px;
+  text-transform: capitalize;
 }
 
 .units {

@@ -36,10 +36,16 @@ function currentTime() {
   today.innerHTML = `${day}, ${month} ${date}, ${year}`;
 
   let time = document.querySelector("p .time");
+  let sunrise = document.querySelector("#riseTime");
+  let sunset = document.querySelector("#setTime");
   let hours = now.getHours();
   let minutes = now.getMinutes();
 
   time.innerHTML = `🕛 Last updated at ${hours}:${minutes}`;
+  sunrise.innerHTML = `Sunrise: ${hours}:${minutes}am`;
+  sunset.innerHTML = `Sunset: ${hours}:${minutes}pm`;
+
+
 }
 currentTime();
 
@@ -73,7 +79,7 @@ function showCurrentWeather(response) {
   let searchedCity = document.querySelector("#searchedCity");
   searchedCity.innerHTML = searched;
 
-  let nowSky = response.data.weather[0].description.toUpperCase();
+  let nowSky = response.data.weather[0].description;
   let sky = `${nowSky}`;
   let mostly = document.querySelector("#mostly");
   mostly.innerHTML = sky;
@@ -105,16 +111,6 @@ function showCurrentWeather(response) {
   let wind = document.querySelector("#wind");
   wind.innerHTML = windSpeed;
 
-  let sunriseTime = response.data.sys.sunrise;
-  let currentSunrise = `Sunrise: ${sunriseTime}am`;
-  let riseTime = document.querySelector("#riseTime");
-  riseTime.innerHTML = currentSunrise;
-
-  let sunsetTime = response.data.sys.sunset;
-  let currentSunset = `Sunset: ${sunsetTime}pm`;
-  let setTime = document.querySelector("#setTime");
-  setTime.innerHTML = currentSunset;
-
   let barometricPressure = response.data.main.pressure;
   let currentPressure = `Pressure: ${barometricPressure}`;
   let barPressure = document.querySelector("#barPressure");
@@ -125,7 +121,7 @@ function showCurrentWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-function displayForcast(response) {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null;
   let forecast = null;
@@ -151,7 +147,18 @@ function citySearch(city) {
   axios.get(weatherUrl).then(showCurrentWeather);
 
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
-  axios.get(apiUrl).then(displayForcast);
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function searchLocation(position) {
+  let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
+  let locationUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(locationUrl).then(showCurrentWeather).then(displayForecast);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
 function showFahrenheitTemperature(event) {
@@ -175,6 +182,9 @@ let fahrenheitTemperature = null;
 
 let form = document.querySelector("#city-form");
 form.addEventListener("submit", enterCity);
+
+let currentButton = document.querySelector("#current-button");
+currentButton.addEventListener("click", getCurrentLocation);
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
