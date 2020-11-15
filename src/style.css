@@ -121,7 +121,11 @@ img.icon {
   text-align: center;
 }
 
-.col-2 {
+.hourly-icon {
+  margin-left: -20px;
+}
+
+.hourly-forecast {
   color: #0278ae;
   font-weight: bold;
   text-align: center;
