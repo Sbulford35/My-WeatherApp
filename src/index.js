@@ -89,10 +89,8 @@ function showCurrentWeather(response) {
   let fahrenheit = `${nowTemperature}`;
   let temperature = document.querySelector("#temperature");
   temperature.innerHTML = fahrenheit;
-
   
-
-  let minTemp = Math.round(response.data.main.temp_min);
+ let minTemp = Math.round(response.data.main.temp_min);
   let minimum = `Feels like: ${minTemp}°F`;
   let low = document.querySelector("#low");
   low.innerHTML = minimum;
@@ -153,8 +151,8 @@ function citySearch(city) {
 
 function searchLocation(position) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
-  let locationUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
-  axios.get(locationUrl).then(showCurrentWeather);
+  let locationUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
+  axios.get(locationUrl).then(showCurrentWeather)
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
 }
