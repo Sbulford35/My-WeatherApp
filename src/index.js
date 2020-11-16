@@ -101,7 +101,7 @@ function showCurrentWeather(response) {
   feels.innerHTML = feelNow;
 
   let currentHumidity = response.data.main.humidity;
-  let humid = `Humidity: ${feelTemp}%`;
+  let humid = `Humidity: ${currentHumidity}%`;
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = humid;
 
